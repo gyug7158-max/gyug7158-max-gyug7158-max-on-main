@@ -1218,7 +1218,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
                                 <div className="text-2xl font-black text-gray-400">${referrals.filter(r => r.status === 'unpaid').reduce((acc, r) => acc + parseFloat(r.commission_amount as any), 0).toFixed(2)}</div>
                               </div>
                             </div>
-                            <div className="space-y-6">
+                            <div className="space-y-6 flex flex-col h-full">
                               <div className="flex items-center justify-between">
                                 <h4 className="text-lg font-bold text-white flex items-center gap-2">
                                   <TrendingUp size={20} className="text-gray-400" />
@@ -1236,7 +1236,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
                                   ))}
                                 </div>
                               </div>
-                              <div className="h-[200px] w-full">
+                              <div className="flex-1 w-full min-h-[250px] sm:min-h-[350px]">
                                 <ResponsiveContainer width="100%" height="100%">
                                   <AreaChart data={dynamicChartData}>
                                     <defs>
@@ -1308,7 +1308,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
                               )}
                             </div>
 
-                            <div className="space-y-6">
+                            <div className="space-y-6 flex flex-col h-full">
                               <div className="flex items-center justify-between">
                                 <h4 className="text-lg font-bold text-white flex items-center gap-2">
                                   <TrendingUp size={20} className={activeStatsTab === 'clicks' ? 'text-white' : 'text-green-400'} />
@@ -1326,7 +1326,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({
                                   ))}
                                 </div>
                               </div>
-                              <div className="h-[200px] w-full">
+                              <div className="flex-1 w-full min-h-[250px] sm:min-h-[350px]">
                                 <ResponsiveContainer width="100%" height="100%">
                                   <AreaChart data={dynamicChartData}>
                                     <defs>
