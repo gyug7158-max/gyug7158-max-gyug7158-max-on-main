@@ -1155,7 +1155,6 @@ const MarketScreener: React.FC<MarketScreenerProps> = ({
                     marketType={previewCoin.market} 
                     exchange={previewCoin.exchange}
                     isExpanded={true} 
-                    height={(favoriteCoinsData.length > 0 && !isFullscreen) ? chartHeight - 36 : chartHeight} 
                     onHistoryChange={onHistoryChange}
                     isReplayMode={isReplayMode}
                     setIsReplayMode={setIsReplayMode}
@@ -1198,7 +1197,6 @@ const MarketScreener: React.FC<MarketScreenerProps> = ({
                           marketType={coin.market} 
                           exchange={coin.exchange}
                           isExpanded={true} 
-                          height={(favoriteCoinsData.length > 0 && !isFullscreen) ? chartHeight - 36 : chartHeight} 
                           isReplayMode={isReplayMode}
                           setIsReplayMode={setIsReplayMode}
                           alerts={alerts}
@@ -2092,7 +2090,7 @@ const MarketScreener: React.FC<MarketScreenerProps> = ({
             </div>
 
             {/* List */}
-            <div className="flex-1 overflow-y-auto custom-scroll p-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div className="flex-1 overflow-y-auto custom-scroll p-4 grid grid-cols-1 sm:grid-cols-2 gap-3 auto-rows-max content-start items-start">
               {filteredAndSortedData.slice(0, 100).map(coin => (
                 <button
                   key={`${coin.exchange}-${coin.market}-${coin.symbol}`}
